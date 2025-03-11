@@ -1,0 +1,70 @@
+{
+    "id": "powerhouse/form-examples",
+    "name": "PeopleRegistryExample",
+    "extension": ".fexa",
+    "description": "This document model is intended to show how the UI Scalar component works in a Connect editor.",
+    "author": {
+        "name": "Powerhouse",
+        "website": "https://powerhouse.inc"
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type PeopleRegistryExampleState {\n  people: [Person!]!\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  OTHER\n}\n\ntype ContactPreference {\n  receiveNotification: Boolean\n  subscribeToNewsletter: Boolean\n}\n\ntype Person {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  contactPreference: ContactPreference!\n}",
+                    "initialValue": "{\n  \"people\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "QrqLx1WZub0/KEuWjXgpriEk1zc=",
+                    "name": "people_registry",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "pjYd9zCFM9HNzkq4ZxprMr0RHUo=",
+                            "name": "ADD_PERSON",
+                            "description": "",
+                            "schema": "input AddPersonInput {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  contactPreference: ContactPreference!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "KZlDdu6yNjxNobs3DfLV9BgDOl8=",
+                            "name": "REMOVE_PERSON",
+                            "description": "",
+                            "schema": "input RemovePersonInput {\n  id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "yUV//aHKuKNYol6qcsdlMaHpT6g=",
+                            "name": "UPDATE_PERSON",
+                            "description": "",
+                            "schema": "input UpdatePersonInput {\n  id: ID!\n  firstName: String\n  age: Int\n  height: Int\n  email: EmailAddress\n  phone: String\n  bio: String\n  gender: Gender\n  contactPreference: ContactPreference\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

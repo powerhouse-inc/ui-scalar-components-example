@@ -1,0 +1,70 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+type PeopleRegistryExampleState {
+  people: [Person!]!
+}
+
+enum Gender {
+  MALE
+  FEMALE
+  OTHER
+}
+
+type ContactPreference {
+  receiveNotification: Boolean
+  subscribeToNewsletter: Boolean
+}
+
+type Person {
+  id: ID!
+  firstName: String!
+  age: Int!
+  height: Int
+  email: EmailAddress!
+  phone: String!
+  bio: String!
+  gender: Gender!
+  contactPreference: ContactPreference!
+}
+
+
+
+# people_registry
+
+input AddPersonInput {
+  id: ID!
+  firstName: String!
+  age: Int!
+  height: Int
+  email: EmailAddress!
+  phone: String!
+  bio: String!
+  gender: Gender!
+  contactPreference: ContactPreference!
+}
+
+input RemovePersonInput {
+  id: ID!
+}
+
+input UpdatePersonInput {
+  id: ID!
+  firstName: String
+  age: Int
+  height: Int
+  email: EmailAddress
+  phone: String
+  bio: String
+  gender: Gender
+  contactPreference: ContactPreference
+}
