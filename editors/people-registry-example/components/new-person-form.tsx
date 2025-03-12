@@ -7,6 +7,7 @@ import {
   StringField,
   RadioGroupField,
   IdField,
+  CountryCodeField,
 } from "@powerhousedao/design-system/scalars";
 import { actions } from "../../../document-models/people-registry-example";
 import {
@@ -61,6 +62,14 @@ export default function NewPersonForm({ dispatch }: NewPersonFormProps) {
   return (
     <Form
       className="max-w-[700px] w-full min-w-[300px]"
+      defaultValues={{
+        bio: "",
+        country: undefined,
+        gender: "MALE",
+        receiveNotification: false,
+        subscribeToNewsletter: false,
+        termsAndConditions: false,
+      }}
       onSubmit={onSubmit}
       resetOnSuccessfulSubmit
     >
@@ -102,6 +111,11 @@ export default function NewPersonForm({ dispatch }: NewPersonFormProps) {
             name="phone"
             pattern={/^\(\d{3}\)\s\d{3}-\d{4}$/}
             placeholder="(123) 456-7890"
+          />
+          <CountryCodeField
+            label="Country"
+            name="country"
+            placeholder="Country of birth"
           />
         </div>
 

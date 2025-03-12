@@ -6,6 +6,7 @@ interface PeopleListProps {
   readonly onDelete: (id: string) => void;
   readonly onUpdateName: (id: string, firstName: string) => void;
   readonly onUpdateGender: (id: string, gender: Gender) => void;
+  readonly onUpdateCountry: (id: string, country: string) => void;
 }
 
 export default function PeopleList({
@@ -13,6 +14,7 @@ export default function PeopleList({
   onDelete,
   onUpdateName,
   onUpdateGender,
+  onUpdateCountry,
 }: PeopleListProps) {
   return (
     <div className="bg-gray-50 w-full">
@@ -28,6 +30,7 @@ export default function PeopleList({
             <PersonCard
               key={person.id}
               onDelete={onDelete}
+              onUpdateCountry={onUpdateCountry}
               onUpdateGender={onUpdateGender}
               onUpdateName={onUpdateName}
               person={person}

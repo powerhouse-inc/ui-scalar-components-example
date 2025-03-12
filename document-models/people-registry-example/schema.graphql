@@ -34,6 +34,7 @@ type Person {
   phone: String!
   bio: String!
   gender: Gender!
+  country: String
   contactPreference: ContactPreference!
 }
 
@@ -50,6 +51,7 @@ input AddPersonInput {
   phone: String!
   bio: String!
   gender: Gender!
+  country: String
   contactPreference: ContactPreference!
 }
 
@@ -66,5 +68,6 @@ input UpdatePersonInput {
   phone: String
   bio: String
   gender: Gender
+  country: String
   contactPreference: ContactPreference
 }

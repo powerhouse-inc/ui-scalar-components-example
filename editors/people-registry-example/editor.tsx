@@ -61,12 +61,21 @@ export default function Editor(props: IProps) {
     },
     [dispatch],
   );
+
+  const handleUpdatePersonCountry = useCallback(
+    (id: string, country: string) => {
+      dispatch(actions.updatePerson({ id, country }));
+    },
+    [dispatch],
+  );
+
   return (
     <div className="flex gap-4 mt-2">
       <NewPersonForm dispatch={dispatch} />
 
       <PeopleList
         onDelete={handleDelete}
+        onUpdateCountry={handleUpdatePersonCountry}
         onUpdateGender={handleUpdatePersonGender}
         onUpdateName={handleUpdatePersonName}
         people={props.document.state.global.people}
