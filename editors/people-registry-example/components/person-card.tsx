@@ -6,12 +6,14 @@ import { Trash2 } from "lucide-react";
 import { useCallback } from "react";
 import NameChangerForm from "./name-changer-form";
 import GenderChangerForm from "./gender-changer-form";
+import CountryChangerForm from "./country-changer-form";
 
 interface PersonCardProps {
   readonly person: Person;
   readonly onDelete: (id: string) => void;
   readonly onUpdateName: (id: string, firstName: string) => void;
   readonly onUpdateGender: (id: string, gender: Gender) => void;
+  readonly onUpdateCountry: (id: string, country: string) => void;
 }
 
 export default function PersonCard({
@@ -19,6 +21,7 @@ export default function PersonCard({
   onDelete,
   onUpdateName,
   onUpdateGender,
+  onUpdateCountry,
 }: PersonCardProps) {
   const handleDelete = useCallback(() => {
     onDelete(person.id);
@@ -27,7 +30,7 @@ export default function PersonCard({
   return (
     <Card className="border border-gray-200 flex-1" key={person.id}>
       <div className="text-sm text-gray-500 bg-gray-100 p-1 text-center">
-        Click name or gender to edit
+        Click name, gender or country to edit
       </div>
       <CardHeader>
         <CardTitle className="flex justify-between items-center">
@@ -50,6 +53,11 @@ export default function PersonCard({
                 gender={person.gender}
                 id={person.id}
                 onUpdateGender={onUpdateGender}
+              />
+              <CountryChangerForm
+                country={person.country || ""}
+                id={person.id}
+                onUpdateCountry={onUpdateCountry}
               />
               <p>{person.age} years old</p>
               <p>{person.email}</p>

@@ -13,7 +13,7 @@
             "changeLog": [],
             "state": {
                 "global": {
-                    "schema": "type PeopleRegistryExampleState {\n  people: [Person!]!\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  OTHER\n}\n\ntype ContactPreference {\n  receiveNotification: Boolean\n  subscribeToNewsletter: Boolean\n}\n\ntype Person {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  contactPreference: ContactPreference!\n}",
+                    "schema": "type PeopleRegistryExampleState {\n  people: [Person!]!\n}\n\nenum Gender {\n  MALE\n  FEMALE\n  OTHER\n}\n\ntype ContactPreference {\n  receiveNotification: Boolean\n  subscribeToNewsletter: Boolean\n}\n\ntype Person {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  country: String\n  contactPreference: ContactPreference!\n}",
                     "initialValue": "{\n  \"people\": []\n}",
                     "examples": []
                 },
@@ -33,7 +33,7 @@
                             "id": "pjYd9zCFM9HNzkq4ZxprMr0RHUo=",
                             "name": "ADD_PERSON",
                             "description": "",
-                            "schema": "input AddPersonInput {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  contactPreference: ContactPreference!\n}",
+                            "schema": "input AddPersonInput {\n  id: ID!\n  firstName: String!\n  age: Int!\n  height: Int\n  email: EmailAddress!\n  phone: String!\n  bio: String!\n  gender: Gender!\n  country: String\n  contactPreference: ContactPreference!\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],
@@ -55,7 +55,7 @@
                             "id": "yUV//aHKuKNYol6qcsdlMaHpT6g=",
                             "name": "UPDATE_PERSON",
                             "description": "",
-                            "schema": "input UpdatePersonInput {\n  id: ID!\n  firstName: String\n  age: Int\n  height: Int\n  email: EmailAddress\n  phone: String\n  bio: String\n  gender: Gender\n  contactPreference: ContactPreference\n}",
+                            "schema": "input UpdatePersonInput {\n  id: ID!\n  firstName: String\n  age: Int\n  height: Int\n  email: EmailAddress\n  phone: String\n  bio: String\n  gender: Gender\n  country: String\n  contactPreference: ContactPreference\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],

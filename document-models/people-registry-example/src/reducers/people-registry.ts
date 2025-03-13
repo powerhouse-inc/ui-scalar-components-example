@@ -10,6 +10,7 @@ export const reducer: PeopleRegistryExamplePeopleRegistryOperations = {
   addPersonOperation(state, action, dispatch) {
     state.people.push({
       ...action.input,
+      country: action.input.country ?? null,
       height: action.input.height ?? null,
     });
   },
@@ -38,6 +39,9 @@ export const reducer: PeopleRegistryExamplePeopleRegistryOperations = {
     }
     if (action.input.gender) {
       person.gender = action.input.gender;
+    }
+    if (action.input.country) {
+      person.country = action.input.country;
     }
     if (action.input.contactPreference) {
       if (action.input.contactPreference.receiveNotification) {
