@@ -1,0 +1,70 @@
+{
+    "id": "powerhouse/form-appintment",
+    "name": "AppointmentBooking",
+    "extension": ".phdm",
+    "description": "This document model is intended to show how the UI Scalar component works in a Connect editor.",
+    "author": {
+        "name": "powerhoise",
+        "website": ""
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type AppointmentBookingState {\n   bookings: [Booking!]!\n}\n\ntype Booking {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float\n  countryCode: String\n  receiveNotification: Boolean\n}\n\n",
+                    "initialValue": "{\n  \"bookings\":[]\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "DtrR0Ho+6BdxjoVrJ7CmXVg6GnE=",
+                    "name": "appointment_booking",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "UzvdeoMaDCzAGl7Ye2mX+brD8WA=",
+                            "name": "ADD_APPOINTMENT",
+                            "description": "",
+                            "schema": "input AddAppointmentInput {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float!\n  countryCode: String!\n  receiveNotification: Boolean!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "NVlP0vlJOvXmmEOn3KW4fE/NDMQ=",
+                            "name": "REMOVE_APPOINTMENT",
+                            "description": "",
+                            "schema": "input RemoveAppointmentInput {\n id: ID!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "qdHjVYDRo2BWeCchTo0+O8sfpK8=",
+                            "name": "UPDATE_APPOINMENT",
+                            "description": "",
+                            "schema": "input UpdateAppoinmentInput {\n id: ID!\n fullName: String\n email: String\n phone: String\n appointmentDateTime: String\n appointmentDate: String\n appointmentTime: String\n fee: Float\n countryCode: String\n  receiveNotification: Boolean\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
