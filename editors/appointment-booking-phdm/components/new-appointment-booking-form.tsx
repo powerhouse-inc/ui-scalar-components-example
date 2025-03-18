@@ -1,8 +1,5 @@
-import { EditorProps } from "document-model/document";
 import {
-  AppointmentBookingState,
   AppointmentBookingAction,
-  AppointmentBookingLocalState,
   actions,
 } from "../../../document-models/appointment-booking";
 import { utils as documentModelUtils } from "document-model/document";
@@ -17,8 +14,6 @@ import {
   DatePickerField,
   TimePickerField,
   DateTimeField,
-  CurrencyCodeField,
-  cn,
 } from "@powerhousedao/design-system/scalars";
 import { useCallback } from "react";
 
@@ -42,13 +37,6 @@ export default function NewAppointmentBookingForm({
   dispatch,
 }: NewAppointmentBookingFormProps) {
   const onSubmit = useCallback((data: NewAppointmentBookingFormData) => {
-    // const { receiveNotification, ...rest } = data;
-
-    // dispatch(
-    //   actions.addAppointment({
-    //     ...rest,
-    //   }),
-    // );
     dispatch(actions.addAppointment(data));
   }, []);
   return (
@@ -112,31 +100,36 @@ export default function NewAppointmentBookingForm({
         <div className="mb-4">
           <h2 className="text-xl font-semibold">Appointment Details</h2>
           <p className="text-gray-600 mb-4">
-            Choose your preferred date and time for the appointment. You can
-            select using the combined date-time picker or individual selectors
-            below.
+            Please select your preferred date and time for the appointment. Use
+            the calendar and time selector to choose the most convenient time
+            for you.
           </p>
 
           <DateTimeField
             description="Select the exact date and time of your appointment."
-            label="Appointment Date & Time"
+            label="Primary Date & Time"
             name="appointmentDateTime"
             required
           />
 
-          <p className="text-gray-600 mt-4 mb-2">
-            Or select date and time separately:
+          <h3 className="text-lg font-semibold text-gray-700 mt-6 mb-2">
+            Alternative Date & Time
+          </h3>
+          <p className="text-gray-600 mb-4">
+            Please select an alternative date and time in case your first
+            preference is not available. This will help us find the best time
+            for your appointment.
           </p>
           <div className="grid grid-cols-2 gap-4">
             <DatePickerField
-              description="Select the appointment date."
-              label="Appointment Date"
+              description="Select an alternative date."
+              label="Alternative Date"
               name="appointmentDate"
               required
             />
             <TimePickerField
-              description="Select the appointment time."
-              label="Appointment Time"
+              description="Select an alternative time."
+              label="Alternative Time"
               name="appointmentTime"
               required
             />

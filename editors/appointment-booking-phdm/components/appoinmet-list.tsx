@@ -1,4 +1,3 @@
-import { Gender, Person } from "document-models/people-registry-example";
 import BookingCard from "./booking-card";
 import { Booking } from "document-models/appointment-booking/gen/types";
 
@@ -8,6 +7,7 @@ interface AppointmentListProps {
   readonly onUpdateDate: (id: string, date: string) => void;
   readonly onUpdateTime: (id: string, time: string) => void;
   readonly onUpdateName: (id: string, name: string) => void;
+  readonly onUpdateDateTime: (id: string, datetime: string) => void;
 }
 
 export default function AppointmentList({
@@ -16,6 +16,7 @@ export default function AppointmentList({
   onUpdateDate,
   onUpdateTime,
   onUpdateName,
+  onUpdateDateTime,
 }: AppointmentListProps) {
   return (
     <div className="bg-gray-50 w-full">
@@ -33,6 +34,7 @@ export default function AppointmentList({
               key={appointment.id}
               onDelete={onDelete}
               onUpdateDate={onUpdateDate}
+              onUpdateDateTime={onUpdateDateTime}
               onUpdateName={onUpdateName}
               onUpdateTime={onUpdateTime}
             />

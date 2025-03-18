@@ -7,7 +7,7 @@ import {
 } from "../../document-models/appointment-booking";
 import { utils as documentModelUtils } from "document-model/document";
 import { Button } from "@powerhousedao/design-system";
-import NewAppointmentBookingForm from "./components/AppointmentBookingForm";
+import NewAppointmentBookingForm from "./components/new-appointment-booking-form";
 import AppointmentList from "./components/appoinmet-list";
 import { useCallback } from "react";
 
@@ -46,6 +46,12 @@ export default function Editor(props: IProps) {
     },
     [dispatch],
   );
+  const onUpdateDateTime = useCallback(
+    (id: string, datetime: string) => {
+      dispatch(actions.updateAppoinment({ id, appointmentDateTime: datetime }));
+    },
+    [dispatch],
+  );
 
   return (
     <div className="flex gap-4 mt-2">
@@ -54,6 +60,7 @@ export default function Editor(props: IProps) {
         appointments={props.document.state.global.bookings}
         onDelete={handleDelete}
         onUpdateDate={onUpdateDate}
+        onUpdateDateTime={onUpdateDateTime}
         onUpdateName={onUpdateName}
         onUpdateTime={onUpdateTime}
       />

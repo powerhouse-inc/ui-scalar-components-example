@@ -3,7 +3,6 @@
 import { Button } from "@powerhousedao/design-system";
 import { Trash2 } from "lucide-react";
 import { useCallback } from "react";
-import DateChangerForm from "./date-change-form";
 import { Booking } from "document-models/appointment-booking/gen/types";
 import {
   Card,
@@ -13,6 +12,8 @@ import {
 } from "../../people-registry-example/components/card";
 import TimeChangerForm from "./time-change-form";
 import NameChangerForm from "./name-changer-form";
+import DateTimeChangerForm from "./date-time-form";
+import DateChangerForm from "./date-change-form";
 
 interface BookingCardProps {
   readonly appointment: Booking;
@@ -20,6 +21,7 @@ interface BookingCardProps {
   readonly onUpdateDate: (id: string, date: string) => void;
   readonly onUpdateTime: (id: string, time: string) => void;
   readonly onUpdateName: (id: string, name: string) => void;
+  readonly onUpdateDateTime: (id: string, datetime: string) => void;
 }
 
 export default function BookingCard({
@@ -27,6 +29,7 @@ export default function BookingCard({
   onDelete,
   onUpdateDate,
   onUpdateTime,
+  onUpdateDateTime,
   onUpdateName,
 }: BookingCardProps) {
   const handleDelete = useCallback(() => {
@@ -49,13 +52,13 @@ export default function BookingCard({
             />
           </div>
           <div className="flex flex-col">
-            <span className="text-xs text-gray-500 mb-1">
-              Appointment Date:
+            <span className="text-[10px] text-gray-500 mb-1">
+              Quick Date & Time Edit:
             </span>
-            <DateChangerForm
-              date={appointment.appointmentDate}
+            <DateTimeChangerForm
+              datetime={appointment.appointmentDateTime}
               id={appointment.id}
-              onUpdateDate={onUpdateDate}
+              onUpdateDateTime={onUpdateDateTime}
             />
           </div>
           <Button color="red" onClick={handleDelete} title="Delete Appointment">
@@ -68,15 +71,27 @@ export default function BookingCard({
         <div className="flex justify-between items-start">
           <div>
             <div className="text-sm text-gray-500 space-y-1 mt-1">
-              <div className="flex flex-col">
-                <span className="text-xs text-gray-500 mb-1">
-                  Appointment Time:
-                </span>
-                <TimeChangerForm
-                  id={appointment.id}
-                  onUpdateTime={onUpdateTime}
-                  time={appointment.appointmentTime}
-                />
+              <div className="grid grid-cols-2 gap-4 mb-4">
+                <div className="flex flex-col">
+                  <span className="text-xs text-gray-500 mb-1">
+                    Appointment Date:
+                  </span>
+                  <DateChangerForm
+                    date={appointment.appointmentDate}
+                    id={appointment.id}
+                    onUpdateDate={onUpdateDate}
+                  />
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-gray-500 mb-1">
+                    Appointment Time:
+                  </span>
+                  <TimeChangerForm
+                    id={appointment.id}
+                    onUpdateTime={onUpdateTime}
+                    time={appointment.appointmentTime}
+                  />
+                </div>
               </div>
               <p>
                 <span className="font-medium">Fee:</span> {appointment.fee}
