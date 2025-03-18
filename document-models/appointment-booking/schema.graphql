@@ -25,6 +25,7 @@ type Booking {
   fee: Float
   countryCode: String
   receiveNotification: Boolean
+  currency: String
 }
 
 
@@ -44,6 +45,7 @@ input AddAppointmentInput {
   fee: Float!
   countryCode: String!
   receiveNotification: Boolean!
+  currency: String!
 }
 
 input RemoveAppointmentInput {
@@ -61,4 +63,5 @@ input UpdateAppoinmentInput {
  fee: Float
  countryCode: String
   receiveNotification: Boolean
+  currency: String
 }

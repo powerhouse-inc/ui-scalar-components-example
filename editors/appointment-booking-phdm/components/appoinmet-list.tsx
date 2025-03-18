@@ -8,6 +8,7 @@ interface AppointmentListProps {
   readonly onUpdateTime: (id: string, time: string) => void;
   readonly onUpdateName: (id: string, name: string) => void;
   readonly onUpdateDateTime: (id: string, datetime: string) => void;
+  readonly onUpdateCurrencyCode: (id: string, currencyCode: string) => void;
 }
 
 export default function AppointmentList({
@@ -17,6 +18,7 @@ export default function AppointmentList({
   onUpdateTime,
   onUpdateName,
   onUpdateDateTime,
+  onUpdateCurrencyCode,
 }: AppointmentListProps) {
   return (
     <div className="bg-gray-50 w-full">
@@ -37,6 +39,7 @@ export default function AppointmentList({
               onUpdateDateTime={onUpdateDateTime}
               onUpdateName={onUpdateName}
               onUpdateTime={onUpdateTime}
+              onUpdateCurrencyCode={onUpdateCurrencyCode}
             />
           ))}
         </div>

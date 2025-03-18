@@ -13,7 +13,7 @@
             "changeLog": [],
             "state": {
                 "global": {
-                    "schema": "type AppointmentBookingState {\n   bookings: [Booking!]!\n}\n\ntype Booking {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float\n  countryCode: String\n  receiveNotification: Boolean\n}\n\n",
+                    "schema": "type AppointmentBookingState {\n   bookings: [Booking!]!\n}\n\ntype Booking {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float\n  countryCode: String\n  receiveNotification: Boolean\n  currency: String\n}\n\n",
                     "initialValue": "{\n  \"bookings\":[]\n}",
                     "examples": []
                 },
@@ -33,7 +33,7 @@
                             "id": "UzvdeoMaDCzAGl7Ye2mX+brD8WA=",
                             "name": "ADD_APPOINTMENT",
                             "description": "",
-                            "schema": "input AddAppointmentInput {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float!\n  countryCode: String!\n  receiveNotification: Boolean!\n}",
+                            "schema": "input AddAppointmentInput {\n  id: ID!\n  fullName: String!\n  email: String!\n  phone: String!\n  appointmentDateTime: String!\n  appointmentDate: String!\n  appointmentTime: String!\n  fee: Float!\n  countryCode: String!\n  receiveNotification: Boolean!\n  currency: String!\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],
@@ -55,7 +55,7 @@
                             "id": "qdHjVYDRo2BWeCchTo0+O8sfpK8=",
                             "name": "UPDATE_APPOINMENT",
                             "description": "",
-                            "schema": "input UpdateAppoinmentInput {\n id: ID!\n fullName: String\n email: String\n phone: String\n appointmentDateTime: String\n appointmentDate: String\n appointmentTime: String\n fee: Float\n countryCode: String\n  receiveNotification: Boolean\n}",
+                            "schema": "input UpdateAppoinmentInput {\n id: ID!\n fullName: String\n email: String\n phone: String\n appointmentDateTime: String\n appointmentDate: String\n appointmentTime: String\n fee: Float\n countryCode: String\n  receiveNotification: Boolean\n  currency: String\n}",
                             "template": "",
                             "reducer": "",
                             "errors": [],

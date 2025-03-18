@@ -38,8 +38,10 @@ export default function DateTimeChangerForm({
       {({ triggerSubmit }) =>
         isEditing ? (
           <DateTimeField
-            autoFocus
             defaultValue={datetime}
+            inputProps={{
+              autoFocus: true,
+            }}
             name="datetime"
             onBlur={() => {
               setIsEditing(false);

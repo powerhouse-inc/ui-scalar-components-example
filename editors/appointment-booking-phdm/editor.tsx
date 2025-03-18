@@ -52,6 +52,12 @@ export default function Editor(props: IProps) {
     },
     [dispatch],
   );
+  const onUpdateCurrencyCode = useCallback(
+    (id: string, currencyCode: string) => {
+      dispatch(actions.updateAppoinment({ id, currency: currencyCode }));
+    },
+    [dispatch],
+  );
 
   return (
     <div className="flex gap-4 mt-2">
@@ -59,6 +65,7 @@ export default function Editor(props: IProps) {
       <AppointmentList
         appointments={props.document.state.global.bookings}
         onDelete={handleDelete}
+        onUpdateCurrencyCode={onUpdateCurrencyCode}
         onUpdateDate={onUpdateDate}
         onUpdateDateTime={onUpdateDateTime}
         onUpdateName={onUpdateName}

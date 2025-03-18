@@ -14,6 +14,7 @@ import {
   DatePickerField,
   TimePickerField,
   DateTimeField,
+  CurrencyCodeField,
 } from "@powerhousedao/design-system/scalars";
 import { useCallback } from "react";
 
@@ -31,6 +32,7 @@ type NewAppointmentBookingFormData = {
   fee: number;
   countryCode: string;
   receiveNotification: boolean;
+  currency: string;
 };
 
 export default function NewAppointmentBookingForm({
@@ -52,6 +54,7 @@ export default function NewAppointmentBookingForm({
         fee: 0,
         countryCode: "",
         receiveNotification: false,
+        currency: "",
       }}
       key={documentModelUtils.hashKey()}
       onSubmit={onSubmit}
@@ -131,6 +134,33 @@ export default function NewAppointmentBookingForm({
               description="Select an alternative time."
               label="Alternative Time"
               name="appointmentTime"
+              required
+            />
+            <CurrencyCodeField
+              currencies={[
+                {
+                  ticker: "EUR",
+                  crypto: false,
+                  label: "Euro",
+                  symbol: "€",
+                },
+                {
+                  ticker: "JPY",
+                  crypto: false,
+                  label: "Japanese Yen",
+                  symbol: "¥",
+                },
+                {
+                  ticker: "USD",
+                  crypto: false,
+                  label: "United States Dollar",
+                  symbol: "$",
+                },
+              ]}
+              description="Select the currency you'd like to use for your appointment."
+              label="Alternative Currency"
+              name="currency"
+              placeholder="Select your currency"
               required
             />
           </div>

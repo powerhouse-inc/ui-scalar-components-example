@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable react/jsx-max-depth */
 
 import { Button } from "@powerhousedao/design-system";
@@ -14,6 +15,7 @@ import TimeChangerForm from "./time-change-form";
 import NameChangerForm from "./name-changer-form";
 import DateTimeChangerForm from "./date-time-form";
 import DateChangerForm from "./date-change-form";
+import CurrencyChangerForm from "./currency-change-form";
 
 interface BookingCardProps {
   readonly appointment: Booking;
@@ -22,6 +24,8 @@ interface BookingCardProps {
   readonly onUpdateTime: (id: string, time: string) => void;
   readonly onUpdateName: (id: string, name: string) => void;
   readonly onUpdateDateTime: (id: string, datetime: string) => void;
+  readonly onUpdateCurrencyCode: (id: string, currencyCode: string) => void;
+  
 }
 
 export default function BookingCard({
@@ -31,6 +35,7 @@ export default function BookingCard({
   onUpdateTime,
   onUpdateDateTime,
   onUpdateName,
+  onUpdateCurrencyCode,
 }: BookingCardProps) {
   const handleDelete = useCallback(() => {
     onDelete(appointment.id);
@@ -91,11 +96,22 @@ export default function BookingCard({
                     onUpdateTime={onUpdateTime}
                     time={appointment.appointmentTime}
                   />
+              
+                </div>
+                <div className="flex flex-col">
+                  <span className="text-xs text-gray-500 mb-1">Currency:</span>
+                  <CurrencyChangerForm
+                    currencyCode={appointment.currency ?? ""}
+                    id={appointment.id}
+                    onUpdateCurrencyCode={onUpdateCurrencyCode}
+                  />
                 </div>
               </div>
-              <p>
-                <span className="font-medium">Fee:</span> {appointment.fee}
-              </p>
+              <div className="flex items-center gap-2">
+                <p>
+                  <span className="font-medium">Fee:</span> {appointment.fee}
+                </p>
+              </div>
               <p>
                 <span className="font-medium">Email:</span> {appointment.email}
               </p>

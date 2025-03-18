@@ -51,5 +51,8 @@ export const reducer: AppointmentBookingAppointmentBookingOperations = {
     if (action.input.receiveNotification) {
       booking.receiveNotification = action.input.receiveNotification;
     }
+    if (action.input.currency) {
+      booking.currency = action.input.currency;
+    }
   },
 };
