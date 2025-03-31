@@ -1,0 +1,67 @@
+scalar Amount_Tokens
+scalar EthereumAddress
+scalar Amount_Percentage
+scalar EmailAddress
+scalar Date
+scalar DateTime
+scalar URL
+scalar Amount_Money
+scalar OLabel
+scalar Currency
+scalar PHID
+scalar OID
+type AppointmentBookingState {
+   bookings: [Booking!]!
+}
+
+type Booking {
+  id: ID!
+  fullName: String!
+  email: String!
+  phone: String!
+  appointmentDateTime: String!
+  appointmentDate: String!
+  appointmentTime: String!
+  fee: Float
+  countryCode: String
+  receiveNotification: Boolean
+  currency: String
+}
+
+
+
+
+
+# appointment_booking
+
+input AddAppointmentInput {
+  id: ID!
+  fullName: String!
+  email: String!
+  phone: String!
+  appointmentDateTime: String!
+  appointmentDate: String!
+  appointmentTime: String!
+  fee: Float!
+  countryCode: String!
+  receiveNotification: Boolean!
+  currency: String!
+}
+
+input RemoveAppointmentInput {
+ id: ID!
+}
+
+input UpdateAppoinmentInput {
+ id: ID!
+ fullName: String
+ email: String
+ phone: String
+ appointmentDateTime: String
+ appointmentDate: String
+ appointmentTime: String
+ fee: Float
+ countryCode: String
+  receiveNotification: Boolean
+  currency: String
+}
