@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { PeopleRegistryExamplePeopleRegistryOperations } from "../../gen/people-registry/operations";
+import { type PeopleRegistryExamplePeopleRegistryOperations } from "../../gen/people-registry/operations.js";
 
 export const reducer: PeopleRegistryExamplePeopleRegistryOperations = {
   addPersonOperation(state, action, dispatch) {

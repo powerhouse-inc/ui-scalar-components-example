@@ -1,5 +1,5 @@
-import { Gender, Person } from "document-models/people-registry-example";
-import PersonCard from "./person-card";
+import type { Gender, Person } from "document-models/people-registry-example/gen/index.js";
+import PersonCard from "./person-card.js";
 
 interface PeopleListProps {
   readonly people: Person[];

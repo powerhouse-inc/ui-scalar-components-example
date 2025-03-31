@@ -1,21 +1,18 @@
-/* eslint-disable prettier/prettier */
-/* eslint-disable react/jsx-max-depth */
-
 import { Button } from "@powerhousedao/design-system";
 import { Trash2 } from "lucide-react";
 import { useCallback } from "react";
-import { Booking } from "document-models/appointment-booking/gen/types";
+import type { Booking } from "../../../document-models/appointment-booking/gen/index.js";
 import {
   Card,
   CardContent,
   CardHeader,
   CardTitle,
-} from "../../people-registry-example/components/card";
-import TimeChangerForm from "./time-change-form";
-import NameChangerForm from "./name-changer-form";
-import DateTimeChangerForm from "./date-time-form";
-import DateChangerForm from "./date-change-form";
-import CurrencyChangerForm from "./currency-change-form";
+} from "../../people-registry-example/components/card.js";
+import TimeChangerForm from "./time-change-form.js";
+import NameChangerForm from "./name-changer-form.js";
+import DateTimeChangerForm from "./date-time-form.js";
+import DateChangerForm from "./date-change-form.js";
+import CurrencyChangerForm from "./currency-change-form.js";
 
 interface BookingCardProps {
   readonly appointment: Booking;

@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import { Form, StringField } from "@powerhousedao/design-system/scalars";
 import { useCallback, useState } from "react";
 

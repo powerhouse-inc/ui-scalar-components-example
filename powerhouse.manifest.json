@@ -1,0 +1,32 @@
+{
+  "name": "ui-scalar-components-example",
+  "description": "UI Scalar components example",
+  "category": "Development",
+  "publisher": {
+    "name": "DSPOT",
+    "url": "https://www.dspot.com.pl/"
+  },
+  "documentModels": [
+    {
+      "id": "dspot/people-registry-example",
+      "name": "People Registry Example"
+    },
+    {
+      "id": "dspot/appointment-booking",
+      "name": "Appointment Booking"
+    }
+  ],
+  "editors": [
+    {
+      "id": "PeopleRegistryExample",
+      "name": "People Registry Example",
+      "documentTypes": ["dspot/people-registry-example"]
+    },
+    {
+      "id": "AppointmentBookingPhdm",
+      "name": "Appointment Booking Phdm",
+      "documentTypes": ["dspot/appointment-booking"]
+    }
+  ],
+  "apps": []
+}

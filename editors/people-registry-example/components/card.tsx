@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { cn } from "@powerhousedao/design-system/scalars";
 
 const Card = React.forwardRef<

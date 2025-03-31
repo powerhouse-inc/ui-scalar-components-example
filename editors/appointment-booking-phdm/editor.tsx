@@ -1,21 +1,13 @@
-import { EditorProps } from "document-model/document";
+import type { EditorProps } from "document-model";
 import {
-  AppointmentBookingState,
-  AppointmentBookingAction,
-  AppointmentBookingLocalState,
+  type AppointmentBookingDocument,
   actions,
-} from "../../document-models/appointment-booking";
-import { utils as documentModelUtils } from "document-model/document";
-import { Button } from "@powerhousedao/design-system";
-import NewAppointmentBookingForm from "./components/new-appointment-booking-form";
-import AppointmentList from "./components/appoinmet-list";
+} from "../../document-models/appointment-booking/gen/index.js";
+import NewAppointmentBookingForm from "./components/new-appointment-booking-form.js";
+import AppointmentList from "./components/appoinmet-list.js";
 import { useCallback } from "react";
 
-export type IProps = EditorProps<
-  AppointmentBookingState,
-  AppointmentBookingAction,
-  AppointmentBookingLocalState
->;
+export type IProps = EditorProps<AppointmentBookingDocument>;
 
 export default function Editor(props: IProps) {
   const dispatch = props.dispatch;
@@ -60,7 +52,7 @@ export default function Editor(props: IProps) {
   );
 
   return (
-    <div className="flex gap-4 mt-2">
+    <div className="flex gap-4 mt-2 overflow-y-scroll">
       <NewAppointmentBookingForm dispatch={dispatch} />
       <AppointmentList
         appointments={props.document.state.global.bookings}

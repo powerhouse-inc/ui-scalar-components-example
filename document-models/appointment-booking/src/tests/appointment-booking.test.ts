@@ -4,18 +4,17 @@
  */
 
 import { generateMock } from "@powerhousedao/codegen";
-import { utils as documentModelUtils } from "document-model/document";
 
-import utils from "../../gen/utils";
+import utils from "../../gen/utils.js";
 import {
   z,
-  AddAppointmentInput,
-  RemoveAppointmentInput,
-  UpdateAppoinmentInput,
-} from "../../gen/schema";
-import { reducer } from "../../gen/reducer";
-import * as creators from "../../gen/appointment-booking/creators";
-import { AppointmentBookingDocument } from "../../gen/types";
+  type AddAppointmentInput,
+  type RemoveAppointmentInput,
+  type UpdateAppoinmentInput,
+} from "../../gen/schema/index.js";
+import { reducer } from "../../gen/reducer.js";
+import * as creators from "../../gen/appointment-booking/creators.js";
+import { type AppointmentBookingDocument } from "../../gen/types.js";
 
 describe("AppointmentBooking Operations", () => {
   let document: AppointmentBookingDocument;

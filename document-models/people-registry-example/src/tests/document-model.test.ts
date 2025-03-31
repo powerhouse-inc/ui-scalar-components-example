@@ -3,14 +3,14 @@
  * - change it by adding new tests or modifying the existing ones
  */
 
-import utils, { initialGlobalState, initialLocalState } from "../../gen/utils";
+import utils, { initialGlobalState, initialLocalState } from "../../gen/utils.js";
 
 describe("People Registry Example Document Model", () => {
   it("should create a new People Registry Example document", () => {
     const document = utils.createDocument();
 
     expect(document).toBeDefined();
-    expect(document.documentType).toBe("powerhouse/form-examples");
+    expect(document.documentType).toBe("dspot/people-registry-example");
   });
 
   it("should create a new People Registry Example document with a valid initial state", () => {

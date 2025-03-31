@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-no-bind */
 import { DatePickerField, Form } from "@powerhousedao/design-system/scalars";
 import { useCallback, useState } from "react";
 
@@ -38,7 +37,7 @@ export default function DateChangerForm({
       {({ triggerSubmit }) =>
         isEditing ? (
           <DatePickerField
-            autoFocus
+            // autoFocus
             defaultValue={date}
             name="date"
             onBlur={() => {

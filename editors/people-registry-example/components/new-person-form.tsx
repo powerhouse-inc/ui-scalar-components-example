@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-max-depth */
 import { Button } from "@powerhousedao/design-system";
 import {
   Form,
@@ -9,11 +8,11 @@ import {
   IdField,
   CountryCodeField,
 } from "@powerhousedao/design-system/scalars";
-import { actions } from "../../../document-models/people-registry-example";
+import { actions } from "../../../document-models/people-registry-example/gen/index.js";
 import {
-  Gender,
-  PeopleRegistryExamplePeopleRegistryAction,
-} from "document-models/people-registry-example/gen";
+  type Gender,
+  type PeopleRegistryExamplePeopleRegistryAction,
+} from "document-models/people-registry-example/gen/index.js";
 import { useCallback } from "react";
 
 interface NewPersonFormProps {

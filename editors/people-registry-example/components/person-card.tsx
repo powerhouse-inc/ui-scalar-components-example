@@ -1,12 +1,11 @@
-/* eslint-disable react/jsx-max-depth */
-import { Gender, Person } from "document-models/people-registry-example";
-import { Card, CardContent, CardHeader, CardTitle } from "./card";
+import { type Gender, type Person } from "document-models/people-registry-example/gen/index.js";
+import { Card, CardContent, CardHeader, CardTitle } from "./card.js";
 import { Button } from "@powerhousedao/design-system";
 import { Trash2 } from "lucide-react";
 import { useCallback } from "react";
-import NameChangerForm from "./name-changer-form";
-import GenderChangerForm from "./gender-changer-form";
-import CountryChangerForm from "./country-changer-form";
+import NameChangerForm from "./name-changer-form.js";
+import GenderChangerForm from "./gender-changer-form.js";
+import CountryChangerForm from "./country-changer-form.js";
 
 interface PersonCardProps {
   readonly person: Person;
