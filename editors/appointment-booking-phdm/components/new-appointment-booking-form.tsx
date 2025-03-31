@@ -1,8 +1,7 @@
 import {
-  AppointmentBookingAction,
+  type AppointmentBookingAction,
   actions,
-} from "../../../document-models/appointment-booking";
-import { utils as documentModelUtils } from "document-model/document";
+} from "../../../document-models/appointment-booking/gen/index.js";
 import { Button } from "@powerhousedao/design-system";
 import {
   Form,
@@ -13,7 +12,7 @@ import {
   CountryCodeField,
   DatePickerField,
   TimePickerField,
-  DateTimeField,
+  DateTimePickerField,
   CurrencyCodeField,
 } from "@powerhousedao/design-system/scalars";
 import { useCallback } from "react";
@@ -56,7 +55,7 @@ export default function NewAppointmentBookingForm({
         receiveNotification: false,
         currency: "",
       }}
-      key={documentModelUtils.hashKey()}
+      key={`form-${crypto.randomUUID()}`}
       onSubmit={onSubmit}
       resetOnSuccessfulSubmit
     >
@@ -108,7 +107,7 @@ export default function NewAppointmentBookingForm({
             for you.
           </p>
 
-          <DateTimeField
+          <DateTimePickerField
             description="Select the exact date and time of your appointment."
             label="Primary Date & Time"
             name="appointmentDateTime"

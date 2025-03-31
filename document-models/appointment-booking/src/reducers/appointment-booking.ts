@@ -4,7 +4,7 @@
  * - delete the file and run the code generator again to have it reset
  */
 
-import { AppointmentBookingAppointmentBookingOperations } from "../../gen/appointment-booking/operations";
+import { type AppointmentBookingAppointmentBookingOperations } from "../../gen/appointment-booking/operations.js";
 
 export const reducer: AppointmentBookingAppointmentBookingOperations = {
   addAppointmentOperation(state, action, dispatch) {

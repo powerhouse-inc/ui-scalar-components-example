@@ -4,13 +4,12 @@
  */
 
 import { generateMock } from "@powerhousedao/codegen";
-import { utils as documentModelUtils } from "document-model/document";
 
-import utils from "../../gen/utils";
-import { z, AddPersonInput, RemovePersonInput } from "../../gen/schema";
-import { reducer } from "../../gen/reducer";
-import * as creators from "../../gen/people-registry/creators";
-import { PeopleRegistryExampleDocument } from "../../gen/types";
+import utils from "../../gen/utils.js";
+import { z, type AddPersonInput, type RemovePersonInput } from "../../gen/schema/index.js";
+import { reducer } from "../../gen/reducer.js";
+import * as creators from "../../gen/people-registry/creators.js";
+import { type PeopleRegistryExampleDocument } from "../../gen/types.js";
 
 describe("PeopleRegistry Operations", () => {
   let document: PeopleRegistryExampleDocument;

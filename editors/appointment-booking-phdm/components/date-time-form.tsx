@@ -1,5 +1,4 @@
-/* eslint-disable react/jsx-no-bind */
-import { DateTimeField, Form } from "@powerhousedao/design-system/scalars";
+import { Form, DateTimePickerField } from "@powerhousedao/design-system/scalars";
 import { useCallback, useState } from "react";
 
 interface DateTimeChangerFormProps {
@@ -37,11 +36,8 @@ export default function DateTimeChangerForm({
     <Form onSubmit={onSubmit}>
       {({ triggerSubmit }) =>
         isEditing ? (
-          <DateTimeField
+          <DateTimePickerField
             defaultValue={datetime}
-            inputProps={{
-              autoFocus: true,
-            }}
             name="datetime"
             onBlur={() => {
               setIsEditing(false);

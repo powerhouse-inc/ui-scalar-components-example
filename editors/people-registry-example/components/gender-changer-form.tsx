@@ -1,6 +1,5 @@
-/* eslint-disable react/jsx-no-bind */
 import { EnumField, Form } from "@powerhousedao/design-system/scalars";
-import { Gender } from "document-models/people-registry-example";
+import type { Gender } from "document-models/people-registry-example/gen/index.js";
 import { useCallback, useState } from "react";
 
 interface GenderChangerFormProps {

@@ -1,20 +1,14 @@
-import { EditorProps } from "document-model/document";
+import type { EditorProps } from "document-model";
 import {
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState,
+  type PeopleRegistryExampleDocument,
   actions,
-  Gender,
-} from "../../document-models/people-registry-example";
-import NewPersonForm from "./components/new-person-form";
-import PeopleList from "./components/people-list";
+  type Gender,
+} from "../../document-models/people-registry-example/gen/index.js";
+import NewPersonForm from "./components/new-person-form.js";
+import PeopleList from "./components/people-list.js";
 import { useCallback } from "react";
 
-export type IProps = EditorProps<
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState
->;
+export type IProps = EditorProps<PeopleRegistryExampleDocument>;
 
 /**
  * This Editor demonstrates various ways to implement forms using the `Form` and Scalar Field components.

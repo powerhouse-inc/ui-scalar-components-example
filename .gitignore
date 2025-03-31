@@ -6,6 +6,4 @@
 **/gen
 
 .env.local
-
-.ph
-projects-import.js
+/.ph

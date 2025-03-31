@@ -1,5 +1,5 @@
-import BookingCard from "./booking-card";
-import { Booking } from "document-models/appointment-booking/gen/types";
+import BookingCard from "./booking-card.js";
+import type { Booking } from "../../../document-models/appointment-booking/gen/index.js";
 
 interface AppointmentListProps {
   readonly appointments: Booking[];

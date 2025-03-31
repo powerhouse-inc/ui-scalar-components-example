@@ -1,21 +1,12 @@
-import { ExtendedEditor, EditorContextProps } from "document-model-libs";
-import Editor from "./editor";
-import {
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState,
-} from "../../document-models/people-registry-example";
+import type { EditorModule } from "document-model";
+import Editor from "./editor.js";
+import type { PeopleRegistryExampleDocument } from "../../document-models/people-registry-example/gen/index.js";
 
-export const module: ExtendedEditor<
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState,
-  EditorContextProps
-> = {
+export const module: EditorModule<PeopleRegistryExampleDocument> = {
   Component: Editor,
   documentTypes: ["powerhouse/form-examples"],
   config: {
-    id: "editor-id",
+    id: "PeopleRegistryExample",
     disableExternalControls: true,
     documentToolbarEnabled: true,
     showSwitchboardLink: true,

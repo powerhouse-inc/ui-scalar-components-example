@@ -3,45 +3,28 @@
  * Delete the file and run the code generator again to have it reset
  */
 
-import { actions as BaseActions, DocumentModel } from "document-model/document";
 import {
-  actions as PeopleRegistryExampleActions,
-  PeopleRegistryExample,
-} from "./gen";
-import { reducer } from "./gen/reducer";
-import { documentModel } from "./gen/document-model";
-import genUtils from "./gen/utils";
-import * as customUtils from "./src/utils";
-import {
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState,
-} from "./gen/types";
+  actions as BaseActions,
+  type DocumentModelModule,
+} from "document-model";
+import { actions as PeopleRegistryExampleActions } from "./gen/index.js";
+import { reducer } from "./gen/reducer.js";
+import { documentModel } from "./gen/document-model.js";
+import genUtils from "./gen/utils.js";
+import * as customUtils from "./src/utils.js";
+import { type PeopleRegistryExampleDocument } from "./gen/types.js";
 
-const Document = PeopleRegistryExample;
 const utils = { ...genUtils, ...customUtils };
 const actions = { ...BaseActions, ...PeopleRegistryExampleActions };
 
-export const module: DocumentModel<
-  PeopleRegistryExampleState,
-  PeopleRegistryExampleAction,
-  PeopleRegistryExampleLocalState
-> = {
-  Document,
+export const module: DocumentModelModule<PeopleRegistryExampleDocument> = {
   reducer,
   actions,
   utils,
   documentModel,
 };
 
-export {
-  PeopleRegistryExample,
-  Document,
-  reducer,
-  actions,
-  utils,
-  documentModel,
-};
+export { reducer, actions, utils, documentModel };
 
-export * from "./gen/types";
-export * from "./src/utils";
+export * from "./gen/types.js";
+export * from "./src/utils.js";
