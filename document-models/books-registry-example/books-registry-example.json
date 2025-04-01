@@ -1,0 +1,70 @@
+{
+    "id": "powerhouse/ui-example",
+    "name": "BooksRegistryExample",
+    "extension": ".phdm",
+    "description": "This document model is intended to show how the UI components works in a Connect editor.",
+    "author": {
+        "name": "Powerhouse",
+        "website": "https://powerhouse.inc"
+    },
+    "specifications": [
+        {
+            "version": 1,
+            "changeLog": [],
+            "state": {
+                "global": {
+                    "schema": "type BooksRegistryExampleState {\n  books: [Book!]!\n}\n\nenum Genre {\n  Novel\n  Story\n  Adventure\n  Fiction\n}\n\ntype Page {\n  id: String!\n  number: Int\n  hasBeenRead: Boolean\n}\n\ntype Author {\n  id: String!\n  name: String\n  age: Int\n  country: String\n  bio: String\n  email: EmailAddress\n  phone: String\n}\n\ntype Book {\n  id: String!\n  title: String\n  description: String\n  genre: Genre\n  author: Author\n  pages: [Page!]\n}",
+                    "initialValue": "{\n  \"books\": []\n}",
+                    "examples": []
+                },
+                "local": {
+                    "schema": "",
+                    "initialValue": "",
+                    "examples": []
+                }
+            },
+            "modules": [
+                {
+                    "id": "QrqLx1WZub0/KEuWjXgpriEk1zc=",
+                    "name": "books_registry",
+                    "description": "",
+                    "operations": [
+                        {
+                            "id": "pjYd9zCFM9HNzkq4ZxprMr0RHUo=",
+                            "name": "ADD_BOOK",
+                            "description": "",
+                            "schema": "input AddBookInput {\n  id: String!\n  title: String\n  description: String\n  genre: Genre\n  author: Author\n  pages: [Page!]\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "KZlDdu6yNjxNobs3DfLV9BgDOl8=",
+                            "name": "REMOVE_BOOK",
+                            "description": "",
+                            "schema": "input RemoveBookInput {\n  id: String!\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        },
+                        {
+                            "id": "yUV//aHKuKNYol6qcsdlMaHpT6g=",
+                            "name": "UPDATE_BOOK",
+                            "description": "",
+                            "schema": "input UpdateBookInput {\n  id: String!\n  title: String\n  description: String\n  genre: Genre\n  author: Author\n  pages: [Page!]\n}",
+                            "template": "",
+                            "reducer": "",
+                            "errors": [],
+                            "examples": [],
+                            "scope": "global"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
