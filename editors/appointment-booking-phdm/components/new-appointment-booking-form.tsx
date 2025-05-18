@@ -14,7 +14,7 @@ import {
   TimePickerField,
   DateTimePickerField,
   CurrencyCodeField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import { useCallback } from "react";
 
 interface NewAppointmentBookingFormProps {

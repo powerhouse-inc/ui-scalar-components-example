@@ -1,4 +1,4 @@
-import { Form, TimePickerField } from "@powerhousedao/design-system/scalars";
+import { Form, TimePickerField } from "@powerhousedao/document-engineering/scalars";
 import { useCallback, useState } from "react";
 
 interface TimeChangerFormProps {

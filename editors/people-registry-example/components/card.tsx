@@ -1,5 +1,5 @@
 import React from "react";
-import { cn } from "@powerhousedao/design-system/scalars";
+import { cn } from "@powerhousedao/document-engineering/scalars";
 
 const Card = React.forwardRef<
   HTMLDivElement,

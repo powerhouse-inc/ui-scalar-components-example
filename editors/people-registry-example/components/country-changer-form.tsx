@@ -1,4 +1,4 @@
-import { CountryCodeField, Form } from "@powerhousedao/design-system/scalars";
+import { CountryCodeField, Form } from "@powerhousedao/document-engineering/scalars";
 import { useCallback, useState } from "react";
 
 interface CountryChangerFormProps {

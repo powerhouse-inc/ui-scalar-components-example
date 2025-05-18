@@ -1,4 +1,4 @@
-import { EnumField, Form } from "@powerhousedao/design-system/scalars";
+import { EnumField, Form } from "@powerhousedao/document-engineering/scalars";
 import type { Gender } from "document-models/people-registry-example/gen/index.js";
 import { useCallback, useState } from "react";
 
