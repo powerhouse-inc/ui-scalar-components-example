@@ -4,10 +4,10 @@ import {
   BooleanField,
   NumberField,
   StringField,
-  RadioGroupField,
+  EnumField,
   IdField,
   CountryCodeField,
-} from "@powerhousedao/design-system/scalars";
+} from "@powerhousedao/document-engineering/scalars";
 import { actions } from "../../../document-models/people-registry-example/gen/index.js";
 import {
   type Gender,
@@ -128,7 +128,7 @@ export default function NewPersonForm({ dispatch }: NewPersonFormProps) {
           required
         />
 
-        <RadioGroupField
+        <EnumField
           label="Gender"
           name="gender"
           options={[

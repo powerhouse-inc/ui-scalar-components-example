@@ -1,4 +1,4 @@
-import { DatePickerField, Form } from "@powerhousedao/design-system/scalars";
+import { DatePickerField, Form } from "@powerhousedao/document-engineering/scalars";
 import { useCallback, useState } from "react";
 
 interface DateChangerFormProps {

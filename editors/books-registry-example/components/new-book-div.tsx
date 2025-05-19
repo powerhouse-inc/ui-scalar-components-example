@@ -6,7 +6,7 @@ import {
   Textarea,
   OIDInput,
   Toggle,
-} from "@powerhousedao/design-system/ui";
+} from "@powerhousedao/document-engineering/ui";
 import { fetchOptionsSync, fetchSelectedOptionSync } from "../mocks/phid-input-mocks.js";
 import { fetchOptionsSync as fetchOIDOptionsSync, fetchSelectedOptionSync as fetchOIDSelectedOptionSync } from "../mocks/oid-input-mocks.js";
 import { actions } from "../../../document-models/books-registry-example/gen/index.js";

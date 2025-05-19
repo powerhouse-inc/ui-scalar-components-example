@@ -1,4 +1,4 @@
-import { CurrencyCodeField, Form } from "@powerhousedao/design-system/scalars";
+import { CurrencyCodeField, Form } from "@powerhousedao/document-engineering/scalars";
 import { useCallback, useState } from "react";
 
 interface CurrencyChangerFormProps {
